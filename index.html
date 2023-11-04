@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteador</title>
+    <style>
+        p{
+            display: inline;
+        }
+        body{
+            background-color: #D32C2E;
+        }
+        div{
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: 30px;
+            color: #2CD3D1;
+            background-color: #D32C2E;
+            position: fixed;
+            left: 50%;
+            top: 10%;
+            transform: translate(-50%, -50%)
+        }
+        h1{
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: 70px;
+            color: #2CD3D1;
+            background-color: #D32C2E;
+            position: fixed;
+            left: 50%;
+            top: 45%;
+            transform: translate(-50%, -50%)
+        }
+        button{
+            position: fixed;
+            color: #2CD3D1;
+            left: 50%;
+            top: 90%;
+            width: 115px;
+            height: 70px;
+            transform: translate(-50%, -50%);
+            background-color: #D32C2E;
+            border: solid #2CD3D1 2px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+    <p>Sorteie um número de </p>
+    <input id="idnum1" type="number">
+    até 
+    <input id="idnum2" type="number">
+    </div>
+    <h1 id="idres">0</h1>
+    <button onclick="Sortear()">Sortear!</button>
+</body>
+<script>
+    function randomIntFromInterval(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+    function Sortear(){
+        var num1 = Number(document.getElementById("idnum1").value)
+        var num2 = Number(document.getElementById("idnum2").value)
+        var res = (document.getElementById("idres"))
+        var sort
+
+        sort = randomIntFromInterval(num1, num2)
+        
+        res.innerHTML = sort
+        console.log(sort)
+        console.log(num1)
+        console.log(num2)
+    }
+</script>
+</html>
